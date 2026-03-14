@@ -1,0 +1,144 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Thyroid Disease Prediction</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body>
+    <div class="container">
+        <h1>🏥 Thyroid Disease Prediction System</h1>
+        <form id="prediction-form">
+            <div class="form-group">
+                <label for="age">Age:</label>
+                <input type="number" id="age" name="age" value="0" required>
+            </div>
+            
+            <div class="form-group">
+                <label for="sex">Sex (0=Male, 1=Female):</label>
+                <input type="number" id="sex" name="sex" min="0" max="1" value="0" required>
+            </div>
+            
+            <div class="form-group">
+                <label for="on_thyroxine">On Thyroxine (0/1):</label>
+                <input type="number" id="on_thyroxine" name="on_thyroxine" min="0" max="1" value="0">
+            </div>
+            
+            <div class="form-group">
+                <label for="query_on_thyroxine">Query on Thyroxine (0/1):</label>
+                <input type="number" id="query_on_thyroxine" name="query_on_thyroxine" min="0" max="1" value="0">
+            </div>
+            
+            <div class="form-group">
+                <label for="on_antithyroid_medication">On Antithyroid Med (0/1):</label>
+                <input type="number" id="on_antithyroid_medication" name="on_antithyroid_medication" min="0" max="1" value="0">
+            </div>
+            
+            <div class="form-group">
+                <label for="sick">Sick (0/1):</label>
+                <input type="number" id="sick" name="sick" min="0" max="1" value="0">
+            </div>
+            
+            <div class="form-group">
+                <label for="pregnant">Pregnant (0/1):</label>
+                <input type="number" id="pregnant" name="pregnant" min="0" max="1" value="0">
+            </div>
+            
+            <div class="form-group">
+                <label for="thyroid_surgery">Thyroid Surgery (0/1):</label>
+                <input type="number" id="thyroid_surgery" name="thyroid_surgery" min="0" max="1" value="0">
+            </div>
+            
+            <div class="form-group">
+                <label for="i131_treatment">I131 Treatment (0/1):</label>
+                <input type="number" id="i131_treatment" name="i131_treatment" min="0" max="1" value="0">
+            </div>
+            
+            <div class="form-group">
+                <label for="query_hypothyroid">Query Hypothyroid (0/1):</label>
+                <input type="number" id="query_hypothyroid" name="query_hypothyroid" min="0" max="1" value="0">
+            </div>
+            
+            <div class="form-group">
+                <label for="query_hyperthyroid">Query Hyperthyroid (0/1):</label>
+                <input type="number" id="query_hyperthyroid" name="query_hyperthyroid" min="0" max="1" value="0">
+            </div>
+            
+            <div class="form-group">
+                <label for="lithium">Lithium (0/1):</label>
+                <input type="number" id="lithium" name="lithium" min="0" max="1" value="0">
+            </div>
+            
+            <div class="form-group">
+                <label for="goitre">Goitre (0/1):</label>
+                <input type="number" id="goitre" name="goitre" min="0" max="1" value="0">
+            </div>
+            
+            <div class="form-group">
+                <label for="tumor">Tumor (0/1):</label>
+                <input type="number" id="tumor" name="tumor" min="0" max="1" value="0">
+            </div>
+            
+            <div class="form-group">
+                <label for="hypopituitary">Hypopituitary (0/1):</label>
+                <input type="number" id="hypopituitary" name="hypopituitary" min="0" max="1" value="0">
+            </div>
+            
+            <div class="form-group">
+                <label for="psych">Psych (0/1):</label>
+                <input type="number" id="psych" name="psych" min="0" max="1" value="0">
+            </div>
+            
+            <div class="form-group">
+                <label for="tsh_measured">TSH Measured (0/1):</label>
+                <input type="number" id="tsh_measured" name="tsh_measured" min="0" max="1" value="0">
+            </div>
+            
+            <div class="form-group">
+                <label for="tsh">TSH Level:</label>
+                <input type="number" step="0.01" id="tsh" name="tsh" value="0" required>
+            </div>
+            
+            <div class="form-group">
+                <label for="t3_measured">T3 Measured (0/1):</label>
+                <input type="number" id="t3_measured" name="t3_measured" min="0" max="1" value="0">
+            </div>
+            
+            <div class="form-group">
+                <label for="tt4_measured">TT4 Measured (0/1):</label>
+                <input type="number" id="tt4_measured" name="tt4_measured" min="0" max="1" value="0">
+            </div>
+            
+            <div class="form-group">
+                <label for="tt4">TT4 Level:</label>
+                <input type="number" step="0.01" id="tt4" name="tt4" value="0" required>
+            </div>
+            
+            <div class="form-group">
+                <label for="t4u_measured">T4U Measured (0/1):</label>
+                <input type="number" id="t4u_measured" name="t4u_measured" min="0" max="1" value="0">
+            </div>
+            
+            <div class="form-group">
+                <label for="t4u">T4U Level:</label>
+                <input type="number" step="0.01" id="t4u" name="t4u" value="0" required>
+            </div>
+            
+            <div class="form-group">
+                <label for="fti_measured">FTI Measured (0/1):</label>
+                <input type="number" id="fti_measured" name="fti_measured" min="0" max="1" value="0">
+            </div>
+            
+            <div class="form-group">
+                <label for="fti">FTI Level:</label>
+                <input type="number" step="0.01" id="fti" name="fti" value="0" required>
+            </div>
+            
+            <button type="submit">Predict</button>
+        </form>
+        <div id="result"></div>
+    </div>
+    <script src="{{ url_for('static', filename='script.js') }}"></script>
+</body>
+</html>
